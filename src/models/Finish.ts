@@ -3,6 +3,7 @@ import Cart, { ICart } from "./Cart";
 
 export interface IFinish {
     id_pedido: Schema.Types.ObjectId | ICart;
+    cliente: string;
     pagamento: string;
     total: number;
     recebido: number;
@@ -13,6 +14,11 @@ const finishSchema = new Schema<IFinish>(
     {
         id_pedido: {
             type: Schema.Types.ObjectId,
+            required: true,
+        },
+
+        cliente: {
+            type: Schema.Types.String,
             required: true,
         },
 

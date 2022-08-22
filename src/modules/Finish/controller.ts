@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import logger from "../../infra/logger";
 import Cart, { ICart } from "../../models/Cart";
 import Finish from "../../models/Finish";
+import WebSocket from "ws";
+import ENV from "../../infra/config/env";
 
 const controller = {
 
@@ -16,11 +18,18 @@ const controller = {
 
             const closeOrder = await Finish.create({
                 id_pedido: id,
+                cliente: order?.cliente,
                 pagamento: pagamento,
                 total: total,
                 recebido: payment,
                 troco: troco,
             });
+
+            const ws = new WebSocket(`${ENV.KITCHEN_ADDR}`);
+            ws.on('open', function open() {
+                ws.send(closeOrder);
+            });
+
 
             logger.info(`[finish]Pedido finalizado: ${req.socket.remoteAddress}`);
             return res.status(201).json(closeOrder);
