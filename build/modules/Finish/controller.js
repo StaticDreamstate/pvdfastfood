@@ -15,6 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const logger_1 = __importDefault(require("../../infra/logger"));
 const Cart_1 = __importDefault(require("../../models/Cart"));
 const Finish_1 = __importDefault(require("../../models/Finish"));
+const ws_1 = __importDefault(require("ws"));
+const env_1 = __importDefault(require("../../infra/config/env"));
 const controller = {
     finish(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -27,10 +29,15 @@ const controller = {
                 const troco = Number(total) - payment;
                 const closeOrder = yield Finish_1.default.create({
                     id_pedido: id,
+                    cliente: order === null || order === void 0 ? void 0 : order.cliente,
                     pagamento: pagamento,
                     total: total,
                     recebido: payment,
                     troco: troco,
+                });
+                const ws = new ws_1.default(`ws://${env_1.default.KITCHEN_ADDR}:${env_1.default.KITCHEN_PORT}`);
+                ws.on('open', function open() {
+                    ws.send(closeOrder);
                 });
                 logger_1.default.info(`[finish]Pedido finalizado: ${req.socket.remoteAddress}`);
                 return res.status(201).json(closeOrder);

@@ -9,6 +9,8 @@ const ENV = {
   NODE_ENV: process.env.NODE_ENV as string,
   MONGODB_URL: process.env.MONGODB_URL as string,
   KITCHEN_ADDR: process.env.KITCHEN_ADDR as string,
+  KITCHEN_PORT: process.env.KITCHEN_PORT as string,
+  PRINTER_INT: process.env.PRINTER_ENV as string,
 };
 
 export default ENV;

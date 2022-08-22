@@ -9,5 +9,7 @@ const ENV = {
     DB_NAME: process.env.DB_NAME,
     NODE_ENV: process.env.NODE_ENV,
     MONGODB_URL: process.env.MONGODB_URL,
+    KITCHEN_ADDR: process.env.KITCHEN_ADDR,
+    KITCHEN_PORT: process.env.KITCHEN_PORT,
 };
 exports.default = ENV;

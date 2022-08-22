@@ -4,6 +4,7 @@ import Cart, { ICart } from "../../models/Cart";
 import Finish from "../../models/Finish";
 import WebSocket from "ws";
 import ENV from "../../infra/config/env";
+import printClient from "../../infra/config/printer";
 
 const controller = {
 
@@ -25,11 +26,12 @@ const controller = {
                 troco: troco,
             });
 
-            const ws = new WebSocket(`${ENV.KITCHEN_ADDR}`);
+            printClient(closeOrder.cliente, closeOrder.pagamento, closeOrder.total);
+
+            const ws = new WebSocket(`ws://${ENV.KITCHEN_ADDR}:${ENV.KITCHEN_PORT}`);
             ws.on('open', function open() {
                 ws.send(closeOrder);
             });
-
 
             logger.info(`[finish]Pedido finalizado: ${req.socket.remoteAddress}`);
             return res.status(201).json(closeOrder);
