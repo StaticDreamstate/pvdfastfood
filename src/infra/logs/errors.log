@@ -1,1 +1,0 @@
-{"level":"error","message":"[kitchen]Erro ao finalizar pedido: ValidationError: pagamento: Path `pagamento` is required.-  ::1","service":"user-service","timestamp":"2022-08-21T22:39:05.409Z"}

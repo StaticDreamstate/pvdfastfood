@@ -6,5 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const controller_1 = __importDefault(require("./controller"));
 const routes = (0, express_1.Router)();
-routes.post("/order/close/:id", controller_1.default.kitchen);
+routes.post("/order/close/:id", controller_1.default.finish);
+routes.delete("/kitchen/:id", controller_1.default.kitchen);
 exports.default = routes;

@@ -11,21 +11,36 @@ const controller = {
             const { pagamento } = req.body;
             const order = await Cart.findOne({ _id: id });
             const total = order?.total;
-            const payment = Number(total)+5;
-            const troco = Number(total)-payment;
+            const payment = Number(total) + 5;
+            const troco = Number(total) - payment;
 
-            const close = await Finish.create({
-                 id_pedido: id,
-                 pagamento: pagamento,
-                 total: total,
-                 recebido: payment,
-                 troco: troco,
-             });
+            const closeOrder = await Finish.create({
+                id_pedido: id,
+                pagamento: pagamento,
+                total: total,
+                recebido: payment,
+                troco: troco,
+            });
 
-            logger.info(`[kitchen]Pedido finalizado: ${req.socket.remoteAddress}`);
-            return res.status(201).json(close);
+            logger.info(`[finish]Pedido finalizado: ${req.socket.remoteAddress}`);
+            return res.status(201).json(closeOrder);
         } catch (error) {
-            logger.error(`[kitchen]Erro ao finalizar pedido: ${error}-  ${req.socket.remoteAddress}`);
+            logger.error(`[finish]Erro ao finalizar pedido: ${error}-  ${req.socket.remoteAddress}`);
+            return res.status(500).json(`${error}`);
+        }
+    },
+
+    async kitchen(req: Request, res: Response) {
+        try {
+            const { id } = req.params;
+           
+            await Finish.deleteOne({id_pedido: id});
+            await Cart.deleteOne({ _id: id });
+            
+            logger.info(`[kitchen]A cozinha deu baixa: ${req.socket.remoteAddress}`);
+            return res.status(204).json();
+        } catch (error) {
+            logger.error(`[kitchen]Erro ao dar baixa: ${error}-  ${req.socket.remoteAddress}`);
             return res.status(500).json(`${error}`);
         }
     },

@@ -16,7 +16,7 @@ const logger_1 = __importDefault(require("../../infra/logger"));
 const Cart_1 = __importDefault(require("../../models/Cart"));
 const Finish_1 = __importDefault(require("../../models/Finish"));
 const controller = {
-    kitchen(req, res) {
+    finish(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { id } = req.params;
@@ -25,18 +25,33 @@ const controller = {
                 const total = order === null || order === void 0 ? void 0 : order.total;
                 const payment = Number(total) + 5;
                 const troco = Number(total) - payment;
-                const close = yield Finish_1.default.create({
+                const closeOrder = yield Finish_1.default.create({
                     id_pedido: id,
                     pagamento: pagamento,
                     total: total,
                     recebido: payment,
                     troco: troco,
                 });
-                logger_1.default.info(`[kitchen]Pedido finalizado: ${req.socket.remoteAddress}`);
-                return res.status(201).json(close);
+                logger_1.default.info(`[finish]Pedido finalizado: ${req.socket.remoteAddress}`);
+                return res.status(201).json(closeOrder);
             }
             catch (error) {
-                logger_1.default.error(`[kitchen]Erro ao finalizar pedido: ${error}-  ${req.socket.remoteAddress}`);
+                logger_1.default.error(`[finish]Erro ao finalizar pedido: ${error}-  ${req.socket.remoteAddress}`);
+                return res.status(500).json(`${error}`);
+            }
+        });
+    },
+    kitchen(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const { id } = req.params;
+                yield Finish_1.default.deleteOne({ id_pedido: id });
+                yield Cart_1.default.deleteOne({ _id: id });
+                logger_1.default.info(`[kitchen]A cozinha deu baixa: ${req.socket.remoteAddress}`);
+                return res.status(204).json();
+            }
+            catch (error) {
+                logger_1.default.error(`[kitchen]Erro ao dar baixa: ${error}-  ${req.socket.remoteAddress}`);
                 return res.status(500).json(`${error}`);
             }
         });
