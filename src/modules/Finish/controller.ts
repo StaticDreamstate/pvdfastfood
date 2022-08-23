@@ -26,12 +26,21 @@ const controller = {
                 troco: troco,
             });
 
-            printClient(closeOrder.cliente, closeOrder.pagamento, closeOrder.total);
+            //try {
+            //    printClient(closeOrder.cliente, closeOrder.pagamento, closeOrder.total);
+            //} catch (error) {
+            //    logger.error(`[printClient]Erro na impressão: ${error}`);
+            //}
 
-            const ws = new WebSocket(`ws://${ENV.KITCHEN_ADDR}:${ENV.KITCHEN_PORT}`);
-            ws.on('open', function open() {
-                ws.send(closeOrder);
-            });
+            try {
+                const ws = new WebSocket(`ws://${ENV.KITCHEN_ADDR}:${ENV.KITCHEN_PORT}`);
+                ws.on('open', function open() {
+                    ws.send(String(closeOrder));
+                })
+                
+                }catch (error) {
+                logger.error(`[WebSockets]Falha na comunicação com a cozinha ${ENV.KITCHEN_ADDR}:${ENV.KITCHEN_PORT}} - ${error}`);
+            }
 
             logger.info(`[finish]Pedido finalizado: ${req.socket.remoteAddress}`);
             return res.status(201).json(closeOrder);
@@ -44,10 +53,10 @@ const controller = {
     async kitchen(req: Request, res: Response) {
         try {
             const { id } = req.params;
-           
-            await Finish.deleteOne({id_pedido: id});
+
+            await Finish.deleteOne({ id_pedido: id });
             await Cart.deleteOne({ _id: id });
-            
+
             logger.info(`[kitchen]A cozinha deu baixa: ${req.socket.remoteAddress}`);
             return res.status(204).json();
         } catch (error) {

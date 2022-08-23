@@ -35,10 +35,20 @@ const controller = {
                     recebido: payment,
                     troco: troco,
                 });
-                const ws = new ws_1.default(`ws://${env_1.default.KITCHEN_ADDR}:${env_1.default.KITCHEN_PORT}`);
-                ws.on('open', function open() {
-                    ws.send(closeOrder);
-                });
+                //try {
+                //    printClient(closeOrder.cliente, closeOrder.pagamento, closeOrder.total);
+                //} catch (error) {
+                //    logger.error(`[printClient]Erro na impressão: ${error}`);
+                //}
+                try {
+                    const ws = new ws_1.default(`ws://${env_1.default.KITCHEN_ADDR}:${env_1.default.KITCHEN_PORT}`);
+                    ws.on('open', function open() {
+                        ws.send(String(closeOrder));
+                    });
+                }
+                catch (error) {
+                    logger_1.default.error(`[WebSockets]Falha na comunicação com a cozinha ${env_1.default.KITCHEN_ADDR}:${env_1.default.KITCHEN_PORT}} - ${error}`);
+                }
                 logger_1.default.info(`[finish]Pedido finalizado: ${req.socket.remoteAddress}`);
                 return res.status(201).json(closeOrder);
             }

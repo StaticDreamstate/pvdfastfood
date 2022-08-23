@@ -1,8 +1,8 @@
 import ENV from "./env";
 import logger from "../logger";
 
-const ThermalPrinter = require("../node-thermal-printer").printer;
-const PrinterTypes = require("../node-thermal-printer").types;
+const ThermalPrinter = require("node-thermal-printer").printer;
+const PrinterTypes = require("node-thermal-printer").types;
 
 let printer = new ThermalPrinter({
     type: PrinterTypes.EPSON,            

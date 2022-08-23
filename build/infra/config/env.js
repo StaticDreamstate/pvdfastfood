@@ -11,5 +11,6 @@ const ENV = {
     MONGODB_URL: process.env.MONGODB_URL,
     KITCHEN_ADDR: process.env.KITCHEN_ADDR,
     KITCHEN_PORT: process.env.KITCHEN_PORT,
+    PRINTER_INT: process.env.PRINTER_ENV,
 };
 exports.default = ENV;
