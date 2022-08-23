@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import logger from "../../infra/logger";
-import Cart, { ICart } from "../../models/Cart";
+import Cart from "../../models/Cart";
 import Products from "../../models/Products";
 
 let itemsId: Array<String> = undefined || [];
