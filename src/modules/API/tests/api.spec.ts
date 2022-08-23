@@ -12,7 +12,7 @@ afterAll(() => {
 
 describe("Bateria de testes integrados", () => {
 
-    logger.debug("Teste da rota /");
+    logger.debug("Teste da rota GET: /");
 
     test("Verificar se a API está de pé", async () => {
         const app = new App();
@@ -22,7 +22,7 @@ describe("Bateria de testes integrados", () => {
         const instance = app.getInstance();
         const response = await server(instance).get("/");
         expect(response.statusCode).toEqual(200);
-        logger.debug(`[/] Status da API: ${response.statusCode}`);
+        logger.debug(`[(get)/] Status da API: ${response.statusCode}`);
     });
 
 });

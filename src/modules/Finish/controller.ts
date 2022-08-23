@@ -2,9 +2,9 @@ import { Request, Response } from "express";
 import logger from "../../infra/logger";
 import Cart, { ICart } from "../../models/Cart";
 import Finish from "../../models/Finish";
-import WebSocket from "ws";
-import ENV from "../../infra/config/env";
-import printClient from "../../infra/config/printer";
+// import WebSocket from "ws";
+// import ENV from "../../infra/config/env";
+// import printClient from "../../infra/config/printer";
 
 const controller = {
 
@@ -32,15 +32,15 @@ const controller = {
             //    logger.error(`[printClient]Erro na impressão: ${error}`);
             //}
 
-            try {
-                const ws = new WebSocket(`ws://${ENV.KITCHEN_ADDR}:${ENV.KITCHEN_PORT}`);
-                ws.on('open', function open() {
-                    ws.send(String(closeOrder));
-                })
+            // try {
+            //     const ws = new WebSocket(`ws://${ENV.KITCHEN_ADDR}:${ENV.KITCHEN_PORT}`);
+            //     ws.on('open', function open() {
+            //         ws.send(String(closeOrder));
+            //     })
                 
-                }catch (error) {
-                logger.error(`[WebSockets]Falha na comunicação com a cozinha ${ENV.KITCHEN_ADDR}:${ENV.KITCHEN_PORT}} - ${error}`);
-            }
+            //     }catch (error) {
+            //     logger.error(`[WebSockets]Falha na comunicação com a cozinha ${ENV.KITCHEN_ADDR}:${ENV.KITCHEN_PORT}} - ${error}`);
+            // }
 
             logger.info(`[finish]Pedido finalizado: ${req.socket.remoteAddress}`);
             return res.status(201).json(closeOrder);

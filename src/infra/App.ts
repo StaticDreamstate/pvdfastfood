@@ -5,6 +5,8 @@ import detect from "detect-port";
 import { mongoDB } from "../database";
 import BaseRoutes from "./BaseRoutes";
 import cors from "cors";
+import swaggerUi from "swagger-ui-express";
+import swaggerFile from "../doc/swagger.json";
 
 type SetupOptions = {
   test?: boolean;
@@ -25,6 +27,7 @@ export default class App {
     this.instance.use(Express.json());
     this.instance.use(Express.urlencoded({extended: true}));
     this.instance.use(BaseRoutes);
+    this.instance.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
     await mongoDB.createConnection();
 
     if (options.test) {

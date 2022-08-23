@@ -1,4 +1,3 @@
-import { ClientRequest } from "http";
 import server from "supertest";
 import App from "../../../infra/App";
 import logger from "../../../infra/logger";
