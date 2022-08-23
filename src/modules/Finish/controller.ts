@@ -1,3 +1,14 @@
+/* Observação:
+
+         Os trechos comentados são referentes ao uso da impressora térmica e do uso dos Websockets
+         para enviar a a resposta para a cozinha. Como eu não tenho uma impressora térmica, não
+         pude testar. O Websockets eu testei simulando um endereço de retorno com o netcat(nc). 
+
+         Para evitar possíveis problemas na plataforma heroku durante o deploy, achei melhor 
+         desabilitar esses recursos por agora.
+
+*/
+
 import { Request, Response } from "express";
 import logger from "../../infra/logger";
 import Cart, { ICart } from "../../models/Cart";
@@ -37,7 +48,7 @@ const controller = {
             //     ws.on('open', function open() {
             //         ws.send(String(closeOrder));
             //     })
-                
+
             //     }catch (error) {
             //     logger.error(`[WebSockets]Falha na comunicação com a cozinha ${ENV.KITCHEN_ADDR}:${ENV.KITCHEN_PORT}} - ${error}`);
             // }
