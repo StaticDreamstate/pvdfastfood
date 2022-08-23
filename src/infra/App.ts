@@ -15,20 +15,21 @@ type SetupOptions = {
 
 export default class App {
   private instance: Application;
-  private defaultPort: any = 8080;
+  private defaultPort: any = process.env.PORT || 8080;
 
   constructor() {
     this.instance = Express();
   }
 
   async setup(options: SetupOptions): Promise<void> {
+    await mongoDB.createConnection();
     const selectedPort = options.port ? options.port : this.defaultPort;
     this.instance.use(cors());
     this.instance.use(Express.json());
     this.instance.use(Express.urlencoded({extended: true}));
     this.instance.use(BaseRoutes);
     this.instance.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
-    await mongoDB.createConnection();
+    
 
     if (options.test) {
       console.log("[OK] Teste de configuração.");
