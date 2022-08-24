@@ -1,0 +1,63 @@
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:23:30.159Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:23:30.302Z"}
+{"level":"error","message":"[finish]Erro ao finalizar pedido: CastError: Cast to ObjectId failed for value \"[object Promise]\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:23:30.359Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:27:43.421Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:27:43.522Z"}
+{"level":"error","message":"[finish]Erro ao finalizar pedido: CastError: Cast to ObjectId failed for value \"[object Promise]\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:27:43.585Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:33:44.607Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:33:44.707Z"}
+{"level":"error","message":"[finish]Erro ao finalizar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:33:44.762Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:35:00.964Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:35:01.122Z"}
+{"level":"error","message":"[finish]Erro ao finalizar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:35:01.170Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:36:29.362Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:36:29.491Z"}
+{"level":"error","message":"[finish]Erro ao finalizar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:36:29.553Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:36:29.619Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:36:29.638Z"}
+{"level":"error","message":"[cancelOrder]Erro ao deletar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:36:29.699Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:39:08.571Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:39:08.668Z"}
+{"level":"info","message":"[order]Pedido aberto: ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:39:09.252Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:39:09.279Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:39:09.329Z"}
+{"level":"error","message":"[finish]Erro ao finalizar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:39:09.345Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:39:09.372Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:39:09.390Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:42:25.694Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:42:25.786Z"}
+{"level":"info","message":"[order]Pedido aberto: ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:42:26.274Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:42:26.338Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:42:26.397Z"}
+{"level":"info","message":"[finish]Pedido finalizado: ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:42:26.575Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:42:26.583Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:42:26.601Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:43:06.263Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:43:06.423Z"}
+{"level":"error","message":"[finish]Erro ao finalizar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:43:06.481Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:43:06.545Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:43:06.570Z"}
+{"level":"error","message":"[cancelOrder]Erro ao deletar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:43:06.609Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:43:40.038Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:43:40.177Z"}
+{"level":"error","message":"[finish]Erro ao finalizar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:43:40.233Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:43:40.301Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:43:40.324Z"}
+{"level":"error","message":"[cancelOrder]Erro ao deletar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:43:40.442Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:44:29.130Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:44:29.230Z"}
+{"level":"info","message":"[order]Pedido aberto: ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:44:29.504Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:44:29.532Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:44:29.573Z"}
+{"level":"error","message":"[finish]Erro ao finalizar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:44:29.627Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:44:29.670Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:44:29.695Z"}
+{"level":"error","message":"[cancelOrder]Erro ao deletar pedido: CastError: Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Carrinho\"-  ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:44:29.708Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:45:07.637Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:45:07.724Z"}
+{"level":"info","message":"[order]Pedido aberto: ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:45:08.314Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:45:08.361Z"}
+{"level":"info","message":"[setup] API em execução.","service":"user-service","timestamp":"2022-08-24T03:45:08.396Z"}
+{"level":"info","message":"[finish]Pedido finalizado: ::ffff:127.0.0.1","service":"user-service","timestamp":"2022-08-24T03:45:08.578Z"}
+{"level":"info","message":"[createConnection] Conexão com o banco de dados realizada.","service":"user-service","timestamp":"2022-08-24T03:45:08.592Z"}
+{"level":"info","message":"[setup] Teste de configuração executado.","service":"user-service","timestamp":"2022-08-24T03:45:08.628Z"}
