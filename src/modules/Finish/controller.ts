@@ -46,7 +46,7 @@ const controller = {
             // try {
             //     const ws = new WebSocket(`ws://${ENV.KITCHEN_ADDR}:${ENV.KITCHEN_PORT}`);
             //     ws.on('open', function open() {
-            //         ws.send(String(closeOrder));
+            //         ws.send(JSON.stringify(closeOrder));
             //     })
 
             //     }catch (error) {
